@@ -51,7 +51,7 @@ function renderNav ( sections ) {
 				}, [
 					h(".logo", [
 						h("img", {
-							"src": "img/phLogo64-gs.png",
+							"src": "https://jsbin-user-assets.s3.amazonaws.com/dhenson02/phLogo64-gs.png",
 							"alt": "Public Health Home",
 							"height": "64",
 							"width": "64"

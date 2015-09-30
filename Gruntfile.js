@@ -41,7 +41,7 @@ module.exports = function ( grunt ) {
           preserveComments: "some"
         },
         files: {
-          'main.min.js': '.tmp/main.js'
+          'mainkx.min.js': '.tmp/main.js'
         }
       },
       dev: {
@@ -54,7 +54,7 @@ module.exports = function ( grunt ) {
           sourceMap: true
         },
         files: {
-          'main.min.js': '.tmp/main.js'
+          'mainkx.min.js': '.tmp/main.js'
         }
       }
     },
@@ -90,7 +90,7 @@ module.exports = function ( grunt ) {
           keepSpecialComments: 1
         },
         files: {
-          'main.min.css': '.tmp/main.css'
+          'mainkx.min.css': '.tmp/main.css'
         }
       },
       dev: {
@@ -98,7 +98,7 @@ module.exports = function ( grunt ) {
           keepSpecialComments: 2
         },
         files: {
-          'main.min.css': '.tmp/main.css'
+          'mainkx.min.css': '.tmp/main.css'
         }
       }
     },
