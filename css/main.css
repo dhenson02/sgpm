@@ -1,0 +1,251 @@
+html {
+	-moz-osx-font-smoothing: greyscale;
+	-webkit-font-smoothing: subpixel-antialiased;
+	zoom: 1;
+	*zoom: 1;
+	font-size: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	font-weight: 300;
+}
+
+::-moz-selection {
+	background-color: #EDC2F0;
+	color: #444444;
+}
+
+::selection {
+	background-color: #EDC2F0;
+	color: #444444;
+}
+
+#ph-wrapper *, #ph-wrapper :after, #ph-wrapper :before {
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+
+.loading, .nochange {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+	opacity: .35;
+	pointer-events: none;
+}
+
+#ph-wrapper, #ph-wrapper h1, #ph-wrapper h2, #ph-wrapper h3, #ph-wrapper h4, #ph-wrapper h5, #ph-wrapper h6 {
+	font-family: Roboto, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+#ph-wrapper a {
+	color: #0072C6;
+	text-decoration: none;
+}
+
+/*#ph-wrapper a:visited {
+	color: #005591;
+}*/
+
+#ph-wrapper a:active, #ph-wrapper a:hover, #ph-wrapper a:focus {
+	outline: 0;
+}
+
+#ph-wrapper a:active {
+	-webkit-transition: color .15s ease-out;
+	-moz-transition: color .15s ease-out;
+	-ms-transition: color .15s ease-out;
+	-o-transition: color .15s ease-out;
+	transition: color .15s ease-out;
+}
+
+#ph-wrapper {
+	font-size: 20px;
+	/*overflow: hidden;*/
+	/*min-width: 100%;*/
+	max-width: 1440px;
+	margin: 50px auto;
+	position: relative;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#ph-content {
+	position: relative;
+	top: 0;
+	bottom: 0;
+	font-size: 100%;
+	height: 100%;
+	width: 100%;
+	max-width: 770px;
+	max-width: calc(100% - 350px);
+	float: left;
+	clear: none;
+	overflow: hidden;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#ph-content.fullPage {
+	right: auto;
+	bottom: auto;
+	overflow: visible;
+	/*max-width: 640px;*/
+}
+
+#ph-title {
+	font-size: 3.5em;
+	border: 4px dashed transparent;
+	padding: 10px;
+	/*margin: 20px;*/
+}
+
+#ph-contentWrap {
+	opacity: 1;
+	position: relative;
+	overflow: visible;
+	min-height: 640px;
+	margin: 10px 0 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.fullPage #ph-contentWrap {
+	top: auto;
+	bottom: auto;
+	right: auto;
+	left: auto;
+	margin: 20px auto;
+	height: 100%;
+	/*max-width: 800px;*/
+	max-width: 100%;
+	width: auto;
+}
+
+#ph-wrapper input[type="text"],
+#ph-wrapper select {
+	background-color: #FAFCFE;
+	color: #333333;
+	font-size: 1.5em;
+	border: none;
+	border-bottom: 1px solid #AAAAAA;
+	padding: .5em .33em;
+	outline: 0;
+	float: none;
+	font-family: inherit;
+	display: block;
+}
+
+#titleFieldLabel {
+	text-align: left;
+	display: block;
+	margin-bottom: 5px;
+}
+
+#ph-wrapper #titleField {
+	width: 100%;
+}
+
+.fullPage #saveButton,
+.fullPage #createButton,
+.fullPage #titleFieldLabel,
+.fullPage #ph-input,
+.fullPage #cheatSheetButton,
+.fullPage #cheatSheet {
+	display: none;
+}
+
+#ph-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 45%;
+	height: 100%;
+	overflow: hidden;
+	font-size: 14px;
+	color: #555555;
+}
+
+#ph-output {
+	/*text-rendering: optimizeLegibility;*/
+	position: absolute;
+	color: #555555;
+	/* This will hide the scrollbar on most **normal** browsers */
+	right: -17px;
+	left: 48%;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+	padding: 10px;
+	line-height: 1.5;
+	max-width: 640px;
+	/*width: 100%;*/
+	border: 4px dashed transparent;
+	white-space: normal;
+}
+
+.fullPage #ph-output {
+	position: relative;
+	background-color: transparent;
+	border-color: transparent;
+	left: auto;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	overflow: visible;
+	/*padding-left: 20px;*/
+	/*max-width: 900px;*/
+	max-width: 100%;
+}
+
+.fullPage #ph-contentWrap {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#cheatSheet {
+	height: 300px;
+	padding: 20px 0;
+}
+
+#ph-wrapper.loading,
+#ph-content.loading,
+#ph-contentWrap.loading,
+#ph-input.loading,
+#ph-output.loading {
+	border-color: #BBBBBB;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=35)";
+	opacity: .35;
+}
+
+@media all and (max-width: 1024px) {
+	#ph-content {
+		/*min-width: fit-content;*/
+	}
+
+	#ph-input {
+		display: block;
+		width: auto;
+		right: 0;
+	}
+
+	#ph-output {
+		display: none;
+	}
+
+	.fullPage #ph-contentWrap,
+	.fullPage #ph-buttons {
+		max-width: 640px;
+		width: 100%;
+	}
+
+	.fullPage #ph-output {
+		display: block;
+	}
+}

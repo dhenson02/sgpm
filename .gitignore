@@ -1,0 +1,12 @@
+node_modules
+potentials
+.tmp
+old
+.sass-cache
+.idea
+.idea_modules
+logs
+pids
+*.pid
+*.seed
+.grunt

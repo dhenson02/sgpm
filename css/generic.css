@@ -1,0 +1,169 @@
+.clearfix {
+	zoom: 1;
+	*zoom: 1;
+}
+
+.clearfix:after {
+	content: " ";
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
+#ph-wrapper img {
+	max-width: 100%;
+}
+
+#ph-wrapper h1, #ph-wrapper h2, #ph-wrapper h3, #ph-wrapper h4, #ph-wrapper h5, #ph-wrapper h6 {
+	font-weight: 200;
+}
+
+#ph-wrapper h4, #ph-wrapper h5, #ph-wrapper h6 {
+	font-weight: 700;
+}
+
+#ph-wrapper h1 {
+	font-size: 2.5em;
+}
+
+#ph-wrapper h2 {
+	padding-bottom: 10px;
+	border: none;
+	border-bottom: 1px solid;
+	border-bottom-color: #DDDDDD;
+	border-bottom-color: rgba(0, 0, 0, .1);
+}
+
+#ph-wrapper h3 {
+	font-size: 1.5em;
+}
+
+#ph-wrapper h4 {
+	font-size: 1.2em;
+}
+
+#ph-wrapper h5 {
+	font-size: 1em;
+}
+
+#ph-wrapper h6 {
+	font-size: .9em;
+}
+
+#ph-wrapper hr {
+	display: block;
+	color: #DFDFDF;
+	height: 8px;
+	margin: 2em 0;
+	padding: 0;
+	border: none;
+	border-top: 8px dotted;
+}
+
+#ph-wrapper img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
+}
+
+#ph-wrapper table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+#ph-output a {
+	color: #0645AD;
+}
+
+#ph-output a:visited {
+	color: #0B0080;
+}
+
+#ph-output a:hover {
+	color: #0066EE;
+}
+
+#ph-output a:active {
+	color: #FAA700;
+}
+
+#ph-output p {
+	margin: 1em 0;
+}
+
+#ph-output h1, #ph-output h2, #ph-output h3, #ph-output h4, #ph-output h5, #ph-output h6 {
+	color: #111111;
+}
+
+#ph-output blockquote {
+	font-size: .925em;
+	color: #999999;
+	margin: 0;
+	padding-left: 3em;
+	border-left: .5em #EEEEEE solid;
+}
+
+#ph-output code, #ph-output pre {
+	color: #000000;
+	font-family: "Ubuntu Mono", "Lucida Console", Consolas, "Lucida Grande", "Liberation Mono", Menlo, Courier, monospace;
+	font-size: .94em;
+	border-radius: 3px;
+	background-color: #FAFAFA;
+	border: 1px solid #DDDDDD;
+}
+
+#ph-output pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	padding: 10px;
+}
+
+#ph-output pre code {
+	border: 0 !important;
+	background: 0 0 !important;
+	line-height: 1.3em;
+}
+
+#ph-output code {
+	padding: 2px 3px;
+}
+
+#ph-output sub, #ph-output sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+#ph-output sup {
+	top: -.5em;
+}
+
+#ph-output sub {
+	bottom: -.25em;
+}
+
+#ph-output ol, #ph-output ul {
+	margin: 1em 0;
+	padding: 0 0 0 2em;
+}
+
+#ph-output li p:last-child {
+	margin: 0;
+}
+
+#ph-output dd {
+	margin: 0 0 0 2em;
+}
+
+#ph-output td, #ph-output th {
+	vertical-align: top;
+	padding: 4px 10px;
+	border: 1px solid #BBBBBB;
+}
+
+#ph-output tr:nth-child(even) td, #ph-output tr:nth-child(even) th {
+	background: #EEEEEE;
+}

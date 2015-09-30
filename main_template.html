@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<style type="text/css">
+		@charset "UTF-8";
+	</style>
+	<title>Content</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+</head>
+<body>
+	<input id="__REQUESTDIGEST" type="hidden" value="hey"/>
+	<div id="wrapper"></div>
+	<script type="text/javascript">
+		//<![CDATA[
+
+		/* Get rid of the ugly nav on the left if it's there */
+		try {
+			var leftNav = document.getElementById("leftnav");
+			leftNav.parentNode.removeChild(leftNav);
+		}
+		catch ( e ) {
+		}
+
+		var phWrapper = document.createElement("div");
+		phWrapper.id = "wrapper";
+		try {
+			var phWrapperTemp = document.getElementById("wrapper");
+			phWrapperTemp.parentNode.replaceChild(phWrapper, phWrapperTemp);
+		}
+		catch ( e ) {
+			try {
+				phWrapperTemp = document.querySelector(".tabs-wrapper + div");
+				phWrapperTemp.parentNode.replaceChild(phWrapper, phWrapperTemp);
+			}
+			catch ( e ) {
+				document.body.appendChild(phWrapper);
+			}
+		}
+
+		//]]>
+	</script>
+	<style type="text/css">
+		@import url("css/editor/editor.min.css");
+		@import url("css/editor/mdn-like.css");
+		@import url("main.min.css");
+	</style>
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="dependencies.min.js"></script>
+	<![endif]-->
+
+	<script type="text/javascript" src="markdown-it.min.js"></script>
+	<script type="text/javascript" src="editor3.min.js"></script>
+	<script type="text/javascript" src="main.min.js"></script>
+</body>
+</html>
