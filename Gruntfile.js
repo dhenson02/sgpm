@@ -61,7 +61,7 @@ module.exports = function ( grunt ) {
     purifycss: {
       options: {},
       dist: {
-        src: ['main_template.html', 'main.min.js'],
+        src: ['main_template.html', 'mainkx.min.js'],
         css: [
           'css/init.css',
           'css/main.css',
