@@ -3242,6 +3242,7 @@ events.on("page.loading", function ( path ) {
 
 module.exports = {
 	data: data,
+	data_: data_,
 	baseURL: baseURL,
 	sitePath: sitePath,
 	digest: digest

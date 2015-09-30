@@ -6,6 +6,7 @@ var h = require("virtual-dom/h"),
 	Router = require("director/build/director").Router,
 	console = console || require("console"),
 	sweetAlert = require("sweetalert"),
+	assign = require("lodash/object/assign"),
 
 	misc = require("./helpers"),
 	codeMirror = misc.codeMirror,
@@ -14,6 +15,7 @@ var h = require("virtual-dom/h"),
 	baseURL = data.baseURL,
 	sitePath = "",//data.sitePath,
 	digest = data.digest,
+	data_ = data.data_,
 
 	pages = require("./store").pages,
 	events = require("./store").events,
@@ -375,7 +377,8 @@ function savePage ( event ) {
 	};
 	//if ( titleDiff ) data["Title"] = current.title;
 	//if ( textDiff ) data[current.type] = current.text;
-	reqwest({
+
+	/*reqwest({
 		url: sitePath + "/items(" + current.id + ")",
 		method: "POST",
 		data: JSON.stringify(data),
@@ -392,8 +395,9 @@ function savePage ( event ) {
 		},
 		success: function () {
 			self.style.fontWeight = "bold";
+			self.style.color = "#26A65B";
 			self.innerHTML = "Saved!";
-			events.emit("list.loading");
+			//events.emit("list.loading");
 		},
 		error: function () {
 			self.style.color = "#FF2222";
@@ -408,7 +412,22 @@ function savePage ( event ) {
 				}, 1500);
 			}
 		}
-	});
+	});*/
+
+	inTransition.TMP = setTimeout(function() {
+		assign(data_[current.id].d, data);
+		self.style.fontWeight = "bold";
+		self.style.color = "#26A65B";
+		self.style.borderColor = "#26A65B";
+		self.innerHTML = "Saved!";
+		if ( !inTransition.tempSaveText ) {
+			inTransition.tempSaveText = setTimeout(function () {
+				self.removeAttribute("style");
+				self.innerHTML = "Save";
+			}, 1500);
+		}
+	}, 400);
+
 	/*}
 	 else {
 	 if ( !misc.regNoChange.test(self.className) ) {
@@ -511,20 +530,21 @@ function createPage ( event ) {
 				html: true,
 				type: "warning"
 			}, function () {
-				reqwest({
+				var data = {
+					'__metadata': {
+						'type': current.listItemType
+					},
+					'Title': title,
+					'Overview': '### New Page :)\n#### Joy',
+					'Section': section,
+					'Program': program,
+					'Page': page,
+					'rabbitHole': rabbitHole
+				};
+				/*reqwest({
 					url: sitePath + "/items",
 					method: "POST",
-					data: JSON.stringify({
-						'__metadata': {
-							'type': current.listItemType
-						},
-						'Title': title,
-						'Overview': '### New Page :)\n#### Joy',
-						'Section': section,
-						'Program': program,
-						'Page': page,
-						'rabbitHole': rabbitHole
-					}),
+					data: JSON.stringify(data),
 					type: "json",
 					contentType: "application/json",
 					withCredentials: true,
@@ -550,7 +570,27 @@ function createPage ( event ) {
 					error: function ( error ) {
 						console.log("error connecting:", error);
 					}
-				});
+				});*/
+
+				setTimeout(function() {
+					sweetAlert({
+						title: "Success!",
+						text: title + " was created at " + path,
+						type: "success",
+						showCancelButton: true,
+						cancelButtonText: "Stay here",
+						confirmButtonText: "Visit new page"
+					}, function () {
+						sweetAlert({
+							title: "Just kidding",
+							text: "Gotta be on the real site!",
+							type: "info",
+							confirmButtonText: "Ok!"
+						});
+						//router.setRoute(path);
+						//return false;
+					});
+				}, 1200);
 			});
 		});
 	});
@@ -567,7 +607,7 @@ function createPage ( event ) {
 function editPage () {
 	if ( misc.regFullPage.test(domRefs.content.className) ) {
 		domRefs.content.className = domRefs.content.className.replace(misc.regFullPage, "");
-		//domRefs.editor.refresh();
+		domRefs.editor.refresh();
 	}
 	else {
 		domRefs.content.className += " fullPage";
